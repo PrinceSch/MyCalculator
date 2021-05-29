@@ -1,5 +1,6 @@
 package ru.geeekbrains.mycalculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -11,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textViewFirst;
     TextView textViewOperation;
     TextView textViewSecond;
+    private final static String keyNumbers = "numbers";
 
     CalculatorLogic calculatorLogic = new CalculatorLogic();
 
@@ -74,5 +76,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(keyNumbers,calculatorLogic);
+    }
 
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        calculatorLogic = savedInstanceState.getParcelable(keyNumbers);
+        //не могу сообразить, что дальше жедать с этим parcelable - данные сохраняются при повороте экрана, но не отображаются.
+    }
 }
