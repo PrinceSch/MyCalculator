@@ -3,4 +3,5 @@
     <dimen name="textViewMargin">100dp</dimen>
     <dimen name="layoutMargin">16dp</dimen>
     <dimen name="buttonMargin">5dp</dimen>
+    <dimen name="textViewSize">25sp</dimen>
 </resources>

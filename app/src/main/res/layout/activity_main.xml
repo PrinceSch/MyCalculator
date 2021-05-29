@@ -10,14 +10,17 @@
 
     <TextView
         android:id="@+id/text_view_first"
+        android:textSize="@dimen/textViewSize"
         android:layout_width="match_parent"
         android:layout_height="@dimen/textViewMargin"/>
     <TextView
         android:id="@+id/text_view_operation"
+        android:textSize="@dimen/textViewSize"
         android:layout_width="match_parent"
         android:layout_height="@dimen/textViewMargin"/>
     <TextView
         android:id="@+id/text_view_second"
+        android:textSize="@dimen/textViewSize"
         android:layout_width="match_parent"
         android:layout_height="@dimen/textViewMargin"/>
 
