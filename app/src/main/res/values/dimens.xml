@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="textViewMargin">350dp</dimen>
+    <dimen name="textViewMargin">100dp</dimen>
     <dimen name="layoutMargin">16dp</dimen>
     <dimen name="buttonMargin">5dp</dimen>
 </resources>
