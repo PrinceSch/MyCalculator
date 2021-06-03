@@ -4,4 +4,6 @@
     <dimen name="layoutMargin">16dp</dimen>
     <dimen name="buttonMargin">5dp</dimen>
     <dimen name="textViewSize">25sp</dimen>
+    <dimen name="buttonHeight">70dp</dimen>
+    <dimen name="buttonTextSize">25sp</dimen>
 </resources>
