@@ -6,23 +6,24 @@
     android:layout_height="match_parent"
     android:padding="@dimen/layoutMargin"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center" >
 
     <TextView
         android:id="@+id/text_view_first"
         android:textSize="@dimen/textViewSize"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/textViewMargin"/>
+        android:layout_height="wrap_content"/>
     <TextView
         android:id="@+id/text_view_operation"
         android:textSize="@dimen/textViewSize"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/textViewMargin"/>
+        android:layout_height="wrap_content"/>
     <TextView
         android:id="@+id/text_view_second"
         android:textSize="@dimen/textViewSize"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/textViewMargin"/>
+        android:layout_height="wrap_content"/>
 
     <GridLayout
         android:layout_width="match_parent"
@@ -156,7 +157,5 @@
             />
 
     </GridLayout>
-
-
 
 </LinearLayout>
