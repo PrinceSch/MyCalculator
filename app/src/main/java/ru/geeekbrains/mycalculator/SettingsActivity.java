@@ -28,8 +28,6 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 MainActivity.setIntTheme(codeStyle);
                 recreate();
-                Intent runMain = new Intent(SettingsActivity.this, MainActivity.class);
-                startActivity(runMain);
             }
         });
     }

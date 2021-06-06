@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent runSettings = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(runSettings);
-            //TODO - как пересоздавать активити из другого? новый запуск? мой текущий вариант рабочий, но чую, что это костыль.
+            //как пересоздавать активити из другого? новый запуск? мой текущий вариант рабочий, но чую, что это костыль.
             }
         });
 
@@ -92,6 +92,12 @@ public class MainActivity extends AppCompatActivity {
 
     public static void setIntTheme(int theme) {
         MainActivity.theme = theme;
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        recreate();
     }
 
     @Override
