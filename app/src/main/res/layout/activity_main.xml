@@ -6,8 +6,13 @@
     android:orientation="vertical"
     android:padding="@dimen/layoutMargin"
     android:gravity="bottom"
-    android:theme="@style/Theme.MyCalculator.Custom"
     tools:context=".MainActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_settings"
+        style="@style/myButton"
+        android:text="@string/buttonSettings"
+        />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_view_first"
