@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="myButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/buttonHeight</item>
+        <item name="android:layout_margin">@dimen/buttonMargin</item>
+        <item name="android:textSize">@dimen/buttonTextSize</item>
+        <item name="android:layout_gravity">bottom</item>
+    </style>
+
+    <style name="myTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/textViewMargin</item>
+        <item name="android:textSize">@dimen/textViewSize</item>
+    </style>
+</resources>

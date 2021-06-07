@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="violetDark">#100873</color>
+    <color name="purpleDark">#380470</color>
+    <color name="violetLight">#7972D8</color>
+    <color name="violetText">#AFAAEC</color>
 </resources>

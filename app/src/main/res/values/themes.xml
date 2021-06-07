@@ -13,4 +13,12 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.MyCalculator.Custom">
+        <item name="colorPrimary">@color/violetDark</item>
+        <item name="colorPrimaryVariant">@color/purpleDark</item>
+        <item name="colorOnPrimary">@color/violetText</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/violetDark</item>
+        <item name="android:background">@color/violetLight</item>
+    </style>
 </resources>
