@@ -9,9 +9,22 @@ public class CalculatorLogic implements Parcelable {
 
     Long numberOne = null;
     String operator = null;
+    Long numberTwo = null;
 
-    public String getNumberOne() {
-        return String.valueOf(numberOne);
+    public Long getNumberOne() {
+        return numberOne;
+    }
+
+    public String getOperator() {
+        return operator;
+    }
+
+    public Long getNumberTwo() {
+        return numberTwo;
+    }
+
+    public CalculatorLogic() {
+
     }
 
     protected CalculatorLogic(Parcel in) {
@@ -21,10 +34,11 @@ public class CalculatorLogic implements Parcelable {
             numberOne = in.readLong();
         }
         operator = in.readString();
-    }
-
-    public CalculatorLogic() {
-
+        if (in.readByte() == 0) {
+            numberTwo = null;
+        } else {
+            numberTwo = in.readLong();
+        }
     }
 
     public static final Creator<CalculatorLogic> CREATOR = new Creator<CalculatorLogic>() {
@@ -39,9 +53,9 @@ public class CalculatorLogic implements Parcelable {
         }
     };
 
-
     void numberButton (Button b, TextView t){
         String temp = t.getText() + (String) b.getText();
+        numberTwo = Long.parseLong(temp);
         t.setText(temp);
     }
 
@@ -64,7 +78,7 @@ public class CalculatorLogic implements Parcelable {
 
     void answerButton (TextView t1, TextView t2, TextView to){
         long answer;
-        Long numberTwo = Long.parseLong((String) t1.getText());
+        numberTwo = Long.parseLong((String) t1.getText());
         switch (operator){
             case "+":
                 answer = numberOne + numberTwo;
@@ -87,6 +101,7 @@ public class CalculatorLogic implements Parcelable {
         t1.setText(null);
     }
 
+
     @Override
     public int describeContents() {
         return 0;
@@ -101,6 +116,11 @@ public class CalculatorLogic implements Parcelable {
             dest.writeLong(numberOne);
         }
         dest.writeString(operator);
+        if (numberTwo == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeLong(numberTwo);
+        }
     }
-
 }

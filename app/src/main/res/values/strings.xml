@@ -16,4 +16,7 @@
     <string name="button_division">:</string>
     <string name="button_answer">=</string>
     <string name="button_delete">DEL</string>
+    <string name="buttonSettings">Settings</string>
+    <string name="light_theme">Light Theme</string>
+    <string name="dark_theme">Dark Theme</string>
 </resources>

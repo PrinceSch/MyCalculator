@@ -1,8 +1,9 @@
-package ru.geeekbrains.mycalculator;
+ package ru.geeekbrains.mycalculator;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,17 +14,26 @@ public class MainActivity extends AppCompatActivity {
     TextView textViewOperation;
     TextView textViewSecond;
     private final static String keyNumbers = "numbers";
+    static int theme = R.style.Theme_MyCalculator;
 
     CalculatorLogic calculatorLogic = new CalculatorLogic();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(theme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         textViewFirst = findViewById(R.id.text_view_first);
         textViewOperation = findViewById(R.id.text_view_operation);
         textViewSecond = findViewById(R.id.text_view_second);
+
+        Button buttonSettings = findViewById(R.id.button_settings);
+        buttonSettings.setOnClickListener(v -> {
+            Intent runSettings = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(runSettings);
+        //как пересоздавать активити из другого? новый запуск? мой текущий вариант рабочий, но чую, что это костыль.
+        });
 
         Button button0 = findViewById(R.id.button_0);
         button0.setOnClickListener(v -> calculatorLogic.numberButton(button0,textViewSecond));
@@ -73,7 +83,17 @@ public class MainActivity extends AppCompatActivity {
         Button buttonAnswer = findViewById(R.id.button_answer);
         buttonAnswer.setOnClickListener(v -> calculatorLogic.answerButton(textViewSecond, textViewFirst, textViewOperation));
 
+    }
 
+
+    public static void setIntTheme(int theme) {
+        MainActivity.theme = theme;
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        recreate();
     }
 
     @Override
@@ -86,6 +106,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         calculatorLogic = savedInstanceState.getParcelable(keyNumbers);
-        //не могу сообразить, что дальше жедать с этим parcelable - данные сохраняются при повороте экрана, но не отображаются.
+        setField(textViewFirst, String.valueOf(calculatorLogic.getNumberOne()));
+        setField(textViewSecond, String.valueOf(calculatorLogic.getNumberTwo()));
+        setField(textViewOperation, calculatorLogic.getOperator());
+    }
+
+    private void setField(TextView field, String value){
+        field.setText(value);
     }
 }

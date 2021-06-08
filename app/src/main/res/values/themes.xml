@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.MyCalculator.Custom">
+    <style name="Custom" parent="Theme.MyCalculator">
         <item name="colorPrimary">@color/violetDark</item>
         <item name="colorPrimaryVariant">@color/purpleDark</item>
         <item name="colorOnPrimary">@color/violetText</item>
